@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+	Please see the license.html file included with this distribution for 
+	attribution and copyright information.
+-->
+
+<root>
+	<template name="windowtitlebar">
+		<genericcontrol>
+			<bounds>0,0,-1,56</bounds>
+			<frame name="windowtitle" offset="35,-5,35,0" />
+			<font>windowtitle</font>
+			<parameters>
+				<windowmargin>60</windowmargin>
+				<controly>0</controly>
+				<controlheight>56</controlheight>
+				<minwidth>100</minwidth>
+			</parameters>
+			<script file="common/scripts/windowtitlebar.lua" />
+		</genericcontrol>
+	</template>
+
+	<template name="sub_charsheet">
+		<subwindow>
+			<anchored to="contentanchor">
+				<top parent="name" anchor="bottom" offset="25" />
+				<left offset="-10" />
+				<right offset="10" />
+				<bottom parent="" offset="-5" />
+			</anchored>
+		</subwindow>
+	</template>
+
+	<!-- these are so when expanding/shrinking desktop view auras are re-applied -->
+	<template name="button_window_sizedown_base">
+		<buttoncontrol>
+			<icon normal="button_sizedown" pressed="button_sizedown_down" hover="button_sizedown_hover" />
+			<script>
+				function onButtonPress()
+					local sClass = window.getClass();
+					if sClass == "imagebackpanel" then
+						ImageManager.sendBackPanelToWindow();
+						TokenManagerADND.applyAuras();
+					elseif sClass == "imagefullpanel" then
+						ImageManager.sendFullPanelToBackPanel();
+									TokenManagerADND.applyAuras();
+					end
+				end
+			</script>
+		</buttoncontrol>
+	</template>
+	<!-- these are so when expanding/shrinking desktop view auras are re-applied -->
+	<template name="button_window_sizeup_base">
+		<buttoncontrol>
+			<icon normal="button_sizeup" pressed="button_sizeup_down" hover="button_sizeup_hover" />
+			<script>
+				function onButtonPress()
+					local sClass = window.getClass();
+					if sClass == "imagewindow" then
+						ImageManager.sendWindowToBackPanel(window);
+									TokenManagerADND.applyAuras();
+					elseif sClass == "imagebackpanel" then
+						ImageManager.sendBackPanelToFullPanel();
+									TokenManagerADND.applyAuras();
+					end
+				end
+			</script>
+		</buttoncontrol>
+	</template>
+
+	<!-- DESKTOP PANELS -->
+
+	<!-- Frame: chatbox -->
+	<template name="resize_chatbox">
+		<resize />
+	</template>
+	<template name="anchor_content_chatbox_top">
+		<genericcontrol name="contentanchor">
+			<anchored height="0">
+				<top offset="25" />
+				<left offset="20" />
+				<right offset="-20" />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="anchor_content_chatbox_bottom">
+		<genericcontrol name="bottomanchor">
+			<anchored to="contentanchor" height="20">
+				<bottom parent="" />
+				<left />
+				<right />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+
+	<!-- Frame: imagepanel -->
+	<template name="close_imagepanel">
+		<close>
+			<anchored>
+				<top offset="1" />
+				<right offset="-1" />
+			</anchored>
+			<invisible />
+		</close>
+	</template>
+	<template name="help_imagepanel">
+		<help>
+			<anchored>
+				<top offset="1" />
+				<right offset="-23" />
+			</anchored>
+			<invisible />
+		</help>
+	</template>
+	<template name="button_imagebackpanel_sizedown">
+		<button_window_sizedown>
+			<anchored position="insidetopright" offset="67,1" />
+			<invisible />
+		</button_window_sizedown>
+	</template>
+	<template name="button_imagebackpanel_sizeup">
+		<button_window_sizeup>
+			<anchored position="insidetopright" offset="45,1" />
+			<invisible />
+		</button_window_sizeup>
+	</template>
+	<template name="button_imagefullpanel_sizedown">
+		<button_window_sizedown>
+			<anchored position="insidetopright" offset="45,1" />
+			<invisible />
+		</button_window_sizedown>
+	</template>
+
+	<!-- FLOATING WINDOWS -->
+
+	<!-- Frame: tokenbag -->
+	<template name="close_tokenbag">
+		<close>
+			<anchored>
+				<top offset="0" />
+				<right offset="0" />
+			</anchored>
+		</close>
+	</template>
+	<template name="help_tokenbag">
+		<help>
+			<anchored>
+				<top offset="0" />
+				<right offset="-24" />
+			</anchored>
+		</help>
+	</template>
+	<template name="resize_tokenbag">
+		<resize>
+			<anchored>
+				<right offset="0" />
+				<bottom offset="0" />
+			</anchored>
+		</resize>
+	</template>
+	<template name="anchor_content_tokenbag_top">
+		<genericcontrol name="contentanchor">
+			<anchored height="0">
+				<top offset="45" />
+				<left offset="30" />
+				<right offset="-40" />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="anchor_content_tokenbag_bottom">
+		<genericcontrol name="bottomanchor">
+			<anchored to="contentanchor" height="30">
+				<bottom parent="" />
+				<left />
+				<right />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+
+	<!-- Frame: referencelist -->
+	<template name="close_referencelist">
+		<close>
+			<anchored>
+				<top offset="6" />
+				<right offset="-6" />
+			</anchored>
+		</close>
+	</template>
+	<template name="help_referencelist">
+		<help>
+			<anchored>
+				<top offset="6" />
+				<right offset="-30" />
+			</anchored>
+		</help>
+	</template>
+	<template name="resize_referencelist">
+		<resize>
+			<anchored>
+				<right offset="-3" />
+				<bottom offset="-3" />
+			</anchored>
+		</resize>
+	</template>
+	<template name="anchor_content_referencelist_top">
+		<genericcontrol name="contentanchor">
+			<anchored height="0">
+				<top offset="55" />
+				<left offset="20" />
+				<right offset="-20" />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="anchor_content_referencelist_bottom">
+		<genericcontrol name="bottomanchor">
+			<anchored to="contentanchor" height="20">
+				<bottom parent="" />
+				<left />
+				<right />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+
+	<!-- Frame: charselect -->
+	<template name="close_charselect">
+		<close>
+			<anchored>
+				<top offset="20" />
+				<right offset="-20" />
+			</anchored>
+		</close>
+	</template>
+	<template name="help_charselect">
+		<help>
+			<anchored>
+				<top offset="20" />
+				<right offset="-42" />
+			</anchored>
+		</help>
+	</template>
+	<template name="resize_charselect">
+		<resize>
+			<anchored>
+				<right offset="-1" />
+				<bottom offset="-1" />
+			</anchored>
+		</resize>
+	</template>
+	<template name="anchor_content_charselect_top">
+		<genericcontrol name="contentanchor">
+			<anchored height="0">
+				<top offset="55" />
+				<left offset="25" />
+				<right offset="-30" />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="anchor_content_charselect_bottom">
+		<genericcontrol name="bottomanchor">
+			<anchored to="contentanchor" height="35">
+				<bottom parent="" />
+				<left />
+				<right />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+
+	<!-- Frame: recordsheet -->
+	<template name="close_recordsheet">
+		<close>
+			<anchored>
+				<top offset="4" />
+				<right offset="-4" />
+			</anchored>
+		</close>
+	</template>
+	<template name="resize_recordsheet">
+		<resize>
+			<anchored>
+				<right offset="-4" />
+				<bottom offset="-5" />
+			</anchored>
+		</resize>
+	</template>
+	<template name="tabs_recordsheet">
+		<buttongroup_tabs name="tabs">
+			<anchored width="18" height="92">
+				<top offset="80" />
+				<right offset="1" />
+			</anchored>
+		</buttongroup_tabs>
+	</template>
+
+	<!-- Frame: charsheet -->
+	<template name="close_charsheet">
+		<close>
+			<anchored>
+				<top offset="24" />
+				<right offset="-12" />
+			</anchored>
+		</close>
+	</template>
+	<template name="resize_charsheet">
+		<resize>
+			<anchored>
+				<right offset="-10" />
+				<bottom offset="-8" />
+			</anchored>
+		</resize>
+	</template>
+	<template name="anchor_title_charsheet">
+		<genericcontrol>
+			<anchored height="0">
+				<top offset="35" />
+				<left parent="" anchor="left" offset="15" />
+				<right parent="" anchor="right" offset="-30" />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="tabs_charsheet">
+		<buttongroup_tabs name="tabs">
+			<anchored width="18" height="92">
+				<top offset="30" />
+				<right offset="-3" />
+			</anchored>
+		</buttongroup_tabs>
+	</template>
+
+	<!-- Frame: storybox -->
+	<template name="close_storybox">
+		<close>
+			<anchored>
+				<top offset="0" />
+				<right offset="0" />
+			</anchored>
+		</close>
+	</template>
+	<template name="resize_storybox">
+		<resize>
+			<anchored>
+				<right offset="-6" />
+				<bottom offset="-5" />
+			</anchored>
+		</resize>
+	</template>
+
+	<!-- Frame: imagebox -->
+	<template name="close_imagebox">
+		<close>
+			<anchored>
+				<top offset="0" />
+				<right offset="-20" />
+			</anchored>
+		</close>
+	</template>
+	<template name="help_imagebox">
+		<help>
+			<anchored>
+				<top offset="0" />
+				<right offset="-42" />
+			</anchored>
+		</help>
+	</template>
+	<template name="resize_imagebox">
+		<genericcontrol>
+			<anchored height="18" width="18">
+				<right offset="-18" />
+				<bottom offset="-22" />
+			</anchored>
+			<icon>window_resize_filled</icon>
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="button_imagewindow_sizeup">
+		<button_window_sizeup>
+			<anchored position="insidetopright" offset="64,0" />
+		</button_window_sizeup>
+	</template>
+
+	<!-- Frame: charsheethelper -->
+	<template name="close_charsheethelper">
+		<close>
+			<anchored>
+				<top offset="24" />
+				<right offset="-12" />
+			</anchored>
+		</close>
+	</template>
+	<template name="resize_charsheethelper">
+		<resize>
+			<anchored>
+				<right offset="-12" />
+				<bottom offset="-14" />
+			</anchored>
+		</resize>
+	</template>
+	<template name="anchor_title_charsheethelper">
+		<genericcontrol>
+			<anchored height="0">
+				<top parent="title" anchor="bottom" offset="0" />
+				<left parent="" anchor="left" offset="20" />
+				<right parent="" anchor="right" offset="-20" />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+
+	<!-- Frame: ctbox -->
+	<template name="close_ctbox">
+		<close>
+			<anchored>
+				<top offset="14" />
+				<right offset="-16" />
+			</anchored>
+		</close>
+	</template>
+	<template name="help_ctbox">
+		<help>
+			<anchored>
+				<top offset="14" />
+				<right offset="-38" />
+			</anchored>
+		</help>
+	</template>
+	<template name="resize_ctbox">
+		<resize>
+			<anchored>
+				<right offset="-14" />
+				<bottom offset="-16" />
+			</anchored>
+		</resize>
+	</template>
+	<template name="anchor_title_ctbox">
+		<genericcontrol>
+			<anchored height="0">
+				<top parent="title" anchor="bottom" offset="0" />
+				<left parent="" anchor="left" offset="30" />
+				<right parent="" anchor="right" offset="-30" />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+
+	<!-- Frame: partysheet -->
+	<template name="close_partysheet">
+		<close>
+			<anchored>
+				<top offset="14" />
+				<right offset="-16" />
+			</anchored>
+		</close>
+	</template>
+	<template name="help_partysheet">
+		<help>
+			<anchored>
+				<top offset="14" />
+				<right offset="-38" />
+			</anchored>
+		</help>
+	</template>
+	<template name="resize_partysheet">
+		<resize>
+			<anchored>
+				<right offset="-14" />
+				<bottom offset="-14" />
+			</anchored>
+		</resize>
+	</template>
+	<template name="anchor_title_partysheet">
+		<genericcontrol>
+			<anchored height="0">
+				<top parent="title" anchor="bottom" offset="0" />
+				<left parent="" anchor="left" offset="20" />
+				<right parent="" anchor="right" offset="-30" />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="tabs_partysheet">
+		<buttongroup_tabs name="tabs">
+			<anchored width="18" height="92">
+				<top offset="50" />
+				<right offset="-4" />
+			</anchored>
+		</buttongroup_tabs>
+	</template>
+</root>

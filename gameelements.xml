@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<distance>
+		<base>5</base>
+		<suffix>ft</suffix>
+		<diagmult>*</diagmult>
+	</distance>
+
+	<imagesettings>
+		<pointer defaultconeangle="5E" />
+	</imagesettings>
+
+	<hotkeybar>
+		<title frame="hotkeytitlebox" frameoffset="2,-2,5,2" margin="2,7" font="hotkey" />
+	</hotkeybar>
+
+	<visionsettings>
+		<!-- <preset key="darkvision" nameres="vision_darkvision" gradcolor="FFFFFFFF" distance="12" intensity="50" /> -->
+		<preset key="blindsight" nameres="vision_blindsight" gradcolor="FF7B96F9" distance="12" />
+		<preset key="truesight" nameres="vision_truesight" distance="12" ignoredark="true" />
+		<!-- //TODO talk to JPG and see if this can be implemented officially -->
+		<!-- <preset key="infravision" nameres="vision_infravision" gradcolor="80FFEC04" gradcolor2="33FF0000" distance="12" intensity="30" /> -->
+		<preset key="infravision" nameres="vision_infravision" gradcolor="FFF5B375" distance="12" intensity="80" />
+
+		<!-- <preset key="nightvision" nameres="vision_nightvision" gradcolor="FF00FF00" gradcolor2="FF000000" distance="12" intensity="50" /> -->
+	</visionsettings>
+
+	<!-- Dice -->
+	<panel name="dicepanel" merge="join">
+		<anchored>
+			<left offset="220" />
+		</anchored>
+	</panel>
+
+	<die name="dF" merge="delete" />
+	<die name="rF" merge="delete" />
+	<die name="gF" merge="delete" />
+	<die name="bF" merge="delete" />
+	<die name="pF" merge="delete" />
+</root>

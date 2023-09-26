@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root version="3.0" >
+
+  <template name="contentanchor">
+    <genericcontrol name="contentanchor">
+      <anchored height="0">
+          <top parent="" anchor="top" offset="20" />
+          <left parent="" anchor="left" offset="0" />
+          <right parent="" anchor="right" offset="0" />
+      </anchored>
+      <disabled />
+    </genericcontrol>      
+  </template>
+
+  <template name="leftanchor">
+    <genericcontrol name="leftanchor">
+        <anchored width="0" height="0">
+            <top />
+            <left />
+        </anchored>
+        <invisible />
+    </genericcontrol>
+  </template>
+
+  <template name="rightanchor">
+    <genericcontrol name="rightanchor">
+      <anchored height="0" width="0">
+        <top offset="0" />
+        <right />
+      </anchored>
+      <invisible />
+    </genericcontrol>
+  </template>
+
+  <template name="idelete">
+    <buttoncontrol name="idelete">
+      <anchored to="rightanchor" width="20" height="20">
+        <top offset="5" />
+        <right anchor="left" relation="relative" offset="-5" />
+      </anchored>
+      <state icon="button_delete" tooltipres="button_delete" />
+      <state icon="button_deleteconfirm" tooltipres="button_deleteconfirm" />
+      <tooltip textres="button_delete" />
+      <script>
+        function onButtonPress()
+          if getValue() == 0 then
+            window.close();
+          end
+        end
+      </script>
+    </buttoncontrol>
+  </template>
+
+ <template name="button_encounter_generator">
+    <button_text_sm>
+      <anchored to="buttonanchor" width="80">
+        <top />
+        <left anchor="right" relation="relative" offset="5" />
+      </anchored>
+      <state textres="button_encounter_generator_text" />
+      <tooltip textres="button_encounter_generator_tooltip" />
+      <script>
+        function onButtonPress()
+          local w = Interface.openWindow("safari_main_window","");
+        end
+      </script>
+    </button_text_sm>
+  </template>
+
+</root>

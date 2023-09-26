@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+  <!-- template for menu record list -->
+  <template name="menu_refmanuals_list">
+    <windowlist>
+       <anchored >
+          <top offset="5" />
+          <left offset="5" />
+          <right offset="-5"/>
+          <bottom offset="-5" />
+        </anchored>            
+      <frame name="darkbox" offset="5,5,5,5" />
+      <empty font="list-empty" textres="desktop_menu_refmanuals_empty" />
+      <class>menu_record_item</class>
+      <sortby><control>name</control></sortby>
+    </windowlist>
+  </template>
+
+  <!-- template for menu record list -->
+  <template name="menu_records_list">
+    <windowlist>
+       <anchored >
+          <top offset="5" />
+          <left offset="5" />
+          <right offset="-5"/>
+          <bottom offset="-5" />
+        </anchored>            
+      <frame name="darkbox" offset="5,5,5,5" />
+      <class>menu_record_item</class>
+      <sortby><control>name</control></sortby>
+    </windowlist>
+  </template>
+
+  <!-- template for menu record list -->
+  <template name="menu_menus_list">
+    <windowlist>
+       <anchored >
+          <top offset="5" />
+          <left offset="5" />
+          <right offset="-5"/>
+          <bottom offset="-5" />
+        </anchored>            
+      <frame name="darkbox" offset="5,5,5,5" />
+      <class>menu_record_item</class>
+      <sortby><control>name</control></sortby>
+    </windowlist>
+  </template>
+</root>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+  <panel name="modifierstack" modes="host,client" merge="join">
+    <bounds>15,-100,200,57</bounds>
+  </panel>
+
+  <!-- menu button panel -->
+  <panel name="menulist" modes="host,client">
+    <bounds>0,0,0,0</bounds>
+    <class>menulist_window</class>
+    <dynamic />
+    <locked />
+  </panel>
+</root>
+
+

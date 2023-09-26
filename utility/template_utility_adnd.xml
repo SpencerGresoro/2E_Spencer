@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<template name="button_modules_unload_all">
+		<button_text>
+			<anchored to="rightanchor" width="100" height="20">
+				<top />
+				<right anchor="left" relation="relative" offset="-20" />
+			</anchored>
+			<state textres="module_label_unload_all" merge="add" />
+			<tooltip textres="module_label_unload_all_tooltip" />
+			<script>
+				function onInit()
+					Module.onModuleAdded = updateVisibility;
+					Module.onModuleUpdated = updateVisibility;
+					Module.onModuleRemoved = updateVisibility;
+					updateVisibility();
+				end
+				function onClose()
+				end
+				function onButtonPress()
+					for _, sName in ipairs(Module.getModules()) do
+						local rInfo = Module.getModuleInfo(sName);
+						if rInfo.loaded then
+							Module.deactivate(sName);
+						end
+					end
+				end
+				function updateVisibility()
+					local bModuleActive = false;
+					for _, sName in ipairs(Module.getModules()) do
+						local rInfo = Module.getModuleInfo(sName);
+						if rInfo.loaded then
+							bModuleActive = true;
+							break;
+						end
+					end
+					setVisible(bModuleActive);
+				end
+			</script>
+		</button_text>
+	</template>
+
+</root>

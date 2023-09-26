@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+  <windowclass name="chat" merge="join">
+    <sheetdata>
+      <basicchatwindow name="chat">
+        <droptypes>
+          <type merge="add">attack</type>
+          <type merge="add">damage</type>
+          <type merge="add">heal</type>
+          <type merge="add">init</type>
+          <type merge="add">save</type>
+          <type merge="add">check</type>
+        </droptypes>
+      </basicchatwindow>
+    </sheetdata>
+  </windowclass>
+
+  <!-- menu button window class-->
+  <windowclass name="menulist_window">
+    <noclose />
+    <script>
+      function onInit()
+        setSize(245,35);
+        OptionsADND.registerWindowMenu(self);
+        onLockStateChanged();
+      end
+      function onLockStateChanged()
+        local bLocked = getLockState();
+        moveicon.setVisible(not bLocked);
+      end
+ 
+       --[[ This will close other menus if user opens a menu drop down and doesnt
+           mouse over it but slides over other menu button sThisControlName is
+           menutype field, 'menus' or 'records'
+      ]]
+        function hideOtherButtonMenus(sThisControlName)
+          local aControls = getControls();
+          if #aControls > 0 then
+            for i=1 , #aControls do
+              local sControlName = aControls[i].getName();
+              local sControlType = type(aControls[i]);
+              if sControlName ~= sThisControlName and sControlType == 'buttoncontrol' and sControlName ~= 'moveicon' 
+              and aControls[i] and aControls[i].windowDropDown then
+                if not aControls[i].windowDropDown.isMinimized() then
+                  aControls[i].windowDropDown.minimize();
+                end
+              end
+            end
+          end
+        end   
+      
+    </script>
+    <sheetdata>
+
+      <buttoncontrol name="menus">
+        <frame name="buttonup_light" offset="2,2,2,2" />
+        <stateframe>
+          <pressed name="buttondown" offset="2,2,2,2" nobaseframe="true" />
+        </stateframe>
+        <script file="desktop/scripts/menubutton.lua" />
+        <menutype>menus</menutype>
+        <anchored height="33" width="75">
+          <top parent="" offset="-3" />
+          <left parent="" anchor="left" offset="-3" />
+        </anchored>
+        <font>reference-b-light</font>
+        <center />
+      </buttoncontrol>
+
+      <buttoncontrol name="records">
+        <frame name="buttonup_light" offset="2,2,2,2" />
+        <stateframe>
+          <pressed name="buttondown" offset="2,2,2,2" nobaseframe="true" />
+        </stateframe>
+        <script file="desktop/scripts/menubutton.lua" />
+        <menutype>records</menutype>
+        <anchored height="33" width="75">
+          <top parent="" offset="-3" />
+          <left parent="menus" anchor="right" offset="0" />
+        </anchored>
+        <font>reference-b-light</font>
+        <center />
+      </buttoncontrol>
+
+      <buttoncontrol name="refmanuals">
+        <frame name="buttonup_light" offset="2,2,2,2" />
+        <stateframe>
+          <pressed name="buttondown" offset="2,2,2,2" nobaseframe="true" />
+        </stateframe>
+        <script file="desktop/scripts/menubutton.lua" />
+        <menutype>refmanuals</menutype>
+        <anchored height="33" width="75">
+          <top parent="" offset="-3" />
+          <left parent="records" anchor="right" offset="0" />
+        </anchored>
+        <font>reference-b-light</font>
+        <center />
+      </buttoncontrol>
+
+      <buttoncontrol name="moveicon">
+        <anchored to="refmanuals" position="righthigh" offset="0,10" height="15" width="15" />
+        <state icon="movearrows" pressed="movearrows" />
+        <disabled />
+      </buttoncontrol>
+
+    </sheetdata>
+  </windowclass>
+
+  <!-- refmanuals dropdown window -->
+  <windowclass name="refmanuals_dropwindow">
+    <script file="desktop/scripts/menulist.lua" />
+    <sizelimits>
+      <minimum width="20" height="20" />
+      <dynamic />
+    </sizelimits>
+    <nomove />
+    <noclose />
+    <minimize>blank_icon</minimize>
+    <frame>darkbox_transparent</frame>
+    <sheetdata>
+      <menu_refmanuals_list name="refmanuals" />
+      <scrollbar>
+        <anchored to="refmanuals" offset="-15" />
+        <target>refmanuals</target>
+      </scrollbar>
+    </sheetdata>
+  </windowclass>
+
+  <!-- records dropdown window -->
+  <windowclass name="records_dropwindow">
+    <script file="desktop/scripts/menulist.lua" />
+    <sizelimits>
+      <minimum width="20" height="20" />
+      <dynamic />
+    </sizelimits>
+    <nomove />
+    <noclose />
+    <minimize>blank_icon</minimize>
+    <frame>darkbox_transparent</frame>
+    <sheetdata>
+      <menu_records_list name="records" />
+      <scrollbar>
+        <anchored to="records" offset="-15" />
+        <target>records</target>
+      </scrollbar>
+    </sheetdata>
+  </windowclass>
+
+  <!-- menus dropdown window -->
+  <windowclass name="menus_dropwindow">
+    <script file="desktop/scripts/menulist.lua" />
+    <sizelimits>
+      <minimum width="20" height="20" />
+      <dynamic />
+    </sizelimits>
+    <nomove />
+    <noclose />
+    <minimize>blank_icon</minimize>
+    <frame>darkbox_transparent</frame>
+    <sheetdata>
+      <menu_menus_list name="menus" />
+      <scrollbar>
+        <anchored to="menus" offset="-15" />
+        <target>menus</target>
+      </scrollbar>
+    </sheetdata>
+  </windowclass>
+
+
+  <!-- menu list record, contains a path and record+name=window or a record+name=Index -->
+  <windowclass name="menu_record_item">
+    <sheetdata>
+      <hs name="path" />
+      <hs name="record" />
+      <hn name="insert" />
+      <hs name="name" />
+      <label name="record_name">
+        <script>
+          function onHover(bOver)
+            if bOver then
+              window.setFrame("lightbox_transparent");
+              --[[setColor("DAA520");]]
+            else
+              window.setFrame("");
+              --[[setColor(nil);]]
+            end
+          end
+          function onClickDown(button, x, y)
+            local sName = window.name.getValue();
+            local sPath = window.path.getValue();
+            local sRecord = window.record.getValue();
+            local bInsert = window.insert.getValue() == 1;
+            if (sPath and sPath ~= "" ) then
+              if sPath ~= 'library' then
+                Interface.openWindow(sRecord,sPath);
+              else
+                Interface.openWindow(sRecord,"");
+              end
+            elseif bInsert then
+              Interface.openWindow(sRecord,sPath);
+            else
+              DesktopManager.toggleIndex(sRecord);
+            end
+            window.windowlist.window.minimizeMe();
+            return true;
+          end
+          function onDragStart(button, x, y, draginfo)
+            local sPath = window.path.getValue();
+            if (not sPath or sPath == "" ) then
+              local sRecordType = window.record.getValue();
+              draginfo.setType("shortcut");
+              local sIcon = 'char_notes';
+              draginfo.setIcon(sIcon);
+              local sClass, sRecord = DesktopManager.getListLink(sRecordType);
+              draginfo.setShortcutData(sClass, sRecord);
+              draginfo.setDescription(Interface.getString("library_recordtype_label_" .. sRecord));
+              return true;
+            end
+          end
+        </script>
+        <anchored height="20">
+          <top offset="0"/>
+          <left offset="4" />
+          <right offset="-4" />
+        </anchored>
+        <font>reference-b-light</font>
+      </label>
+    </sheetdata>
+  </windowclass>
+
+  <windowclass name="dicetower" merge="join">
+    <sizelimits>
+      <minimum width="100" height="90" />
+    </sizelimits>
+    <sheetdata>
+      <genericcontrol name="base">
+        <bounds>0,0,100,90</bounds>
+        <droptypes>
+          <type merge="add">attack</type>
+          <type merge="add">damage</type>
+          <type merge="add">heal</type>
+          <type merge="add">init</type>
+          <type merge="add">save</type>
+          <type merge="add">check</type>
+        </droptypes>
+      </genericcontrol>
+    </sheetdata>
+  </windowclass>
+
+  <windowclass name="shortcuts" merge="join">
+    <script>
+      function onInit()
+        OptionsADND.registerWindowSidebar(self);
+        if super and super.onInit then
+          super.onInit();
+        end
+      end
+    </script>
+  </windowclass>
+
+
+</root>

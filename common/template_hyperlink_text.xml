@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+
+  <template name="string_hypertext">
+      <stringcontrol>
+        <font>cta_hypertext</font>
+        <lineoffset default="on" mergerule="replace">1</lineoffset>
+        <cursor hover="arrow" />
+        <readonly />
+			  <multilinespacing>16</multilinespacing>
+      </stringcontrol>
+  </template>
+
+
+  <template name="hyperlink_text">
+      <string_hypertext name="hypertext">
+        <script file="common/scripts/hyperlink_text.lua" />
+      </string_hypertext>
+  </template>
+
+</root>

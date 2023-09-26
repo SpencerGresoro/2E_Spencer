@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+  <!-- common -->
+  <icon name="button_dialog_check_green" file="graphics/buttons/button_dialog_check_green.png" />
+  <icon name="button_dialog_check_red" file="graphics/buttons/button_dialog_check_red.png" />
+    
+    
+  <!-- Buttons -->
+  <icon name="button_menu" file="graphics/buttons/FG_BUTTON.png" />
+  <icon name="button_menu_down" file="graphics/buttons/FG_BUTTON_down.png" />
+  
+	<icon name="button_link_light" file="graphics/buttons/button_link_light.png" />
+  
+  <icon name="button_toggle_on" file="graphics/buttons/button_toggle_on.png" />
+  <icon name="button_toggle_off" file="graphics/buttons/button_toggle_off.png" />
+  <icon name="button_toggle_skip" file="graphics/buttons/button_toggle_skip.png" />
+  <icon name="button_toggle_all" file="graphics/buttons/button_toggle_all.png" />
+  <icon name="button_toggle_action" file="graphics/buttons/button_toggle_action.png" />
+  <icon name="button_toggle_roll" file="graphics/buttons/button_toggle_roll.png" />
+  <icon name="button_toggle_single" file="graphics/buttons/button_toggle_single.png" />
+  <icon name="button_toggle_trgt" file="graphics/buttons/button_toggle_trgt.png" />
+  <icon name="button_toggle_self" file="graphics/buttons/button_toggle_self.png" />
+  <icon name="button_action_memorize" file="graphics/buttons/button_action_memorize.png" />
+  <icon name="button_action_memorize_down" file="graphics/buttons/button_action_memorize_down.png" />
+  <!-- import -->
+  <icon name="button_import_file" file="graphics/buttons/button_import_file.png" />
+  <icon name="button_import_file_down" file="graphics/buttons/button_import_file_down.png" />
+  <icon name="button_export_file" file="graphics/buttons/button_export_file.png" />
+  <icon name="button_export_file_down" file="graphics/buttons/button_export_file_down.png" />
+
+  <icon name="button_import_statblock" file="graphics/buttons/button_import_statblock.png" />
+  <icon name="button_import_statblock_down" file="graphics/buttons/button_import_down.png" />
+  
+  <!-- Upper combat mini section, init/surprise/turn undead -->
+  <icon name="button_turnundead" file="graphics/buttons/button_turnundead.png" />
+  <icon name="button_surprise" file="graphics/buttons/button_surprise.png" />
+  <icon name="button_initiative" file="graphics/buttons/button_initiative.png" />
+  <icon name="button_turnundead_down" file="graphics/buttons/button_turnundead_down.png" />
+  <icon name="button_surprise_down" file="graphics/buttons/button_surprise_down.png" />
+  <icon name="button_initiative_down" file="graphics/buttons/button_initiative_down.png" />
+  <icon name="button_initdelay" file="graphics/buttons/button_initdelay.png" />
+  <icon name="button_initdelay_down" file="graphics/buttons/button_initdelay_down.png" />
+
+  <icon name="button_cta_nextactor" file="graphics/buttons/button_cta_nextactor.png" />
+  <icon name="button_cta_nextactor_down" file="graphics/buttons/button_cta_nextactor_down.png" />
+</root>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<!-- Windows -->
+	<font name="windowtitle">
+		<ttf file="graphics/fonts/Charlemagne Std Bold.ttf" name="Charlemagne Std Bold" size="18" />
+		<color value="DED1B1" />
+		<shadow offset="2,2" color="000000" />
+	</font>
+	<font name="subwindowtitle">
+		<ttf file="graphics/fonts/Charlemagne Std Bold.ttf" name="Charlemagne Std Bold" size="16" />
+		<color value="DED1B1" />
+		<shadow offset="2,2" color="000000" />
+	</font>
+	<font name="subwindowsmalltitle">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="FFF1CC" />
+		<shadow offset="1,1" color="000000" />
+	</font>
+	<font name="subwindowsmalltitle_disabled">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="494340" />
+		<shadow offset="1,1" color="000000" />
+	</font>
+	<font name="recordsheet_header">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#000000" />
+	</font>
+	<font name="imagebox_header">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#000000" />
+	</font>
+	<font name="npcsheet_header">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#000000" />
+	</font>
+	<font name="storybox_header">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="24" />
+		<color value="660000" />
+	</font>
+
+	<!-- Chat -->
+	<font name="chatfont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#261A12" />
+	</font>
+	<font name="emotefont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#880000" />
+	</font>
+	<font name="narratorfont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#261A12" />
+	</font>
+	<font name="systemfont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#660066" />
+	</font>
+	<font name="msgfont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#660066" />
+	</font>
+	<font name="oocfont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#005500" />
+	</font>
+	<font name="chat_record_share">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#261A12" />
+	</font>
+	<font name="chatnpcfont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#000066" />
+	</font>
+	<font name="chatgmfont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-BoldItalic.ttf" name="Noto Sans Bold Italic" size="16" />
+		<color value="#000000" />
+	</font>
+	<font name="whisperfont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#660066" />
+	</font>
+
+	<!-- Hot keys -->
+	<font name="hotkey">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#E4C01B" />
+		<shadow offset="1,1" color="#000C45" />
+	</font>	
+
+	<!-- Modifier Stack -->
+	<font name="modcollector">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="24" />
+		<color value="DED1B1" />
+	</font>
+	<font name="modcollectorlabel">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="14" />
+		<color value="DED1B1" />
+	</font>
+
+	<!-- Formatted text fields -->
+	<font name="reference-h">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="24" />
+		<color value="660000" />
+	</font>
+
+	<!-- Standard text fields -->
+	<font name="sheetlabelmini">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="13" />
+		<color value="#000000" />
+	</font>
+
+	<!-- Reference -->
+	<font name="reference-header">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#FFFFFF" />
+	</font>
+
+	<!-- Asset View -->
+	<font name="assetview_empty">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#2DFCE1" />
+	</font>
+	
+	<!-- Misc -->
+	<font name="button-white">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#FFFFFF" />
+	</font>
+	<font name="sheetlabel_ct">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#FFF1CC" />
+	</font>
+	<font name="sheetlabel_ps">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#000000" />
+	</font>
+	<font name="list-empty-ct">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Italic.ttf" name="Noto Sans Italic" size="16" />
+		<color value="#FFFFFF" />
+	</font>
+	<font name="list-empty-ps">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Italic.ttf" name="Noto Sans Italic" size="16" />
+		<color value="#000000" />
+	</font>
+
+	<!-- Languages -->
+	<font name="Dwarven">
+		<ttf file="graphics/fonts/Dwarven.ttf" name="D&amp;D Dwarvish Bold" size="20" />
+		<color value="#000000" />
+	</font>
+	<font name="Elven">
+		<ttf file="graphics/fonts/Elven.ttf" name="D&amp;DElven" size="20" />
+		<color value="#000000" />
+	</font>
+	<font name="Infernal">
+		<ttf file="graphics/fonts/Infernal.ttf" name="D&amp;D Abyssal Barazhad" size="20" />
+		<color value="#000000" />
+	</font>
+	<font name="Celestial">
+		<ttf file="graphics/fonts/Celestial.ttf" name="Supernal" size="24" />
+		<color value="#000000" />
+	</font>
+	<font name="Draconic">
+		<ttf file="graphics/fonts/Draconic.ttf" name="Draconic 4" size="24" />
+		<color value="#000000" />
+	</font>
+	<font name="Primordial">
+		<ttf file="graphics/fonts/Primordial.ttf" name="Primordial" size="24" />
+		<color value="#000000" />
+	</font>
+
+	<!-- Ruleset Specific -->
+	<font name="reference-title">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="24" />
+		<color value="000000" />
+	</font>
+	<font name="sheetlabelmini_percent">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="14" />
+		<color value="#000000" />
+	</font>
+
+	<font name="successfont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#418c12" />
+	</font>
+	<font name="failfont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#6106d1" />
+	</font>
+	<font name="hitfont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#cc1d1d" />
+	</font>
+	<font name="missfont">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#1d97cc" />
+	</font>
+
+	<font name="warning">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#CB4335" />
+		<shadow offset="0,1" color="000000" />
+	</font>
+
+	<font name="cta_hypertext">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="18" />
+	</font>
+	<font name="cta_text">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="18" />
+	</font>
+
+	<!-- font used in grouplists in shortcut buttons on item for damage -->
+	<font name="grouplist-damage-black">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#000000" />
+	</font>
+
+	<!-- regular -->
+	<font name="regular10">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="13" />
+	</font>
+	<font name="regular11">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="14" />
+	</font>
+	<font name="regular14-white">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#FFFFFF" />
+	</font>
+
+	<!-- bold -->
+	<font name="bold10">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="13" />
+	</font>
+	<font name="bold11">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="14" />
+	</font>
+	<font name="bold12">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="14" />
+	</font>
+	<font name="bold14-white">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="15" />
+		<color value="#FFFFFF" />
+	</font>
+	<font name="bold16">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+	</font>
+	<font name="bold20">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="18" />
+	</font>
+
+	<!-- Formatted text fields for dark/transparent frames and menus -->
+	<font name="reference-b-large-light">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="18" />
+		<color value="#FEAB07" />
+	</font>
+	<font name="reference-r-light">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="16" />
+		<color value="#ECF0F1" />
+	</font>
+	<font name="reference-i-light">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Italic.ttf" name="Noto Sans Italic" size="16" />
+		<color value="#ECF0F1" />
+	</font>
+	<font name="reference-b-light">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+		<color value="#F7F9F9" />
+	</font>
+	<font name="reference-bi-light">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-BoldItalic.ttf" name="Noto Sans Bold Italic" size="16" />
+		<color value="#F7F9F9" />
+	</font>
+
+	<!-- semi-bold -->
+	<font name="semibold12">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Bold" size="16" />
+	</font>
+
+	<!-- font used for hpcurrent display. The shadow is to make sure even with 
+	the light coloring for hp status you can see it -->
+	<font name="font-hpcurrent">
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="18" />
+		<shadow offset="0,1" color="000000" />
+	</font>
+</root>

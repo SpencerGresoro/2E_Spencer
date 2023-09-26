@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+  <template name="label_recordtype">
+    <stringcontrol>
+      <anchored to="name" position="belowleft" offset="0,2">
+        <right parent="" offset="-25" />
+      </anchored>
+      <font>sheetlabel</font>
+      <readonly />
+      <script>
+        function onInit()
+          if getValue() == "" then
+            setVisible(false);
+          end
+        end
+      </script>
+    </stringcontrol>
+  </template>
+  <template name="label_item_reftype">
+    <label_recordtype>
+      <multilinespacing>20</multilinespacing>
+      <static />
+      <script file="ref/scripts/ref_summary.lua" />
+    </label_recordtype>
+  </template>
+
+  <!-- Overrides -->
+  <template name="sub_record_header">
+    <subwindow>
+      <anchored position="insidetop" offset="-10,10" />
+      <frame name="headergray" offset="5,5,5,5" />
+      <activate />
+    </subwindow>
+  </template>
+
+  <template name="frame_record_content">
+    <genericcontrol name="contentframe">
+      <anchored>
+        <top parent="header" anchor="bottom" offset="15" />
+        <left offset="15" />
+        <right offset="-25" />
+        <bottom offset="-15" />
+      </anchored>
+      <frame name="groupbox" offset="20,17,20,17" />
+      <disabled />
+    </genericcontrol>
+  </template>
+</root>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<!-- This will probably never go away unless I bulk fix all the old FGC maps in products -->
+	<windowclass name="imagewindow" merge="join">
+		<sheetdata>
+			<genericcontrol name="fgc_hold_over_fix">
+				<anchored height="0" width="0">
+					<top />
+					<left />
+				</anchored>
+				<script>
+				function onInit()
+					if Session.IsHost then
+						local node = window.getDatabaseNode();
+						local sScale = DB.getValue(node,"scale");
+						if sScale then
+							local sOldDistance, sOldSuffix = sScale:match("([%d]+)([%w%p]+)");
+							UtilityManagerADND.logDebug(DB.getValue(node,"name",""), " :Importing older FGC style scale/suffix into FGU.",sOldDistance,sOldSuffix);
+
+							window.image.setDistanceBaseUnits(sOldDistance);
+							window.image.setDistanceSuffix(sOldSuffix);
+							DB.deleteChild(node, "scale");
+						end
+					end
+				end
+				</script>
+				<invisible />
+			</genericcontrol>
+		</sheetdata>
+	</windowclass>
+
+</root>
